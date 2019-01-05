@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: headers">
+    <meta charset="UTF-8"/>
+    <title>Authors</title>
+</head>
+<body>
+
+<h1 th:text="${title}">Person List</h1>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>DOB</th>
+    </tr>
+    <tr th:each="person : ${persons}">
+        <td th:text="${person.id}">1</td>
+        <td th:text="${person.firstName}">Edgar</td>
+        <td th:text="${person.lastName}">Poe</td>
+        <td th:text="${person.dob}"></td>
+    </tr>
+</table>
+    <div th:replace="fragments :: footer">Default Footer</div>
+</body>
+</html>
